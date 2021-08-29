@@ -3,15 +3,15 @@
 
 double getUserInput(char coefficient)
 {
-	double userInput;
+	double userInput{};
 	while (true)
 	{
 		std::cout << "Enter the '" << coefficient << "' coefficient: ";
 		std::cin >> userInput;
-		std::cin.clear();
-		std::cin.ignore(1000, '\n');
 		if (!std::cin.fail())
 			break;
+		std::cin.clear();
+		std::cin.ignore(1000, '\n');
 		std::cout << "Invalid input, try again....\n";
 	}
 
@@ -61,22 +61,12 @@ void calcAndPrintBhaskara(double a, double b, double c)
 
 int main()
 {
-	std::cout << "a = 2, b = 6, c = 4\n";
-	calcAndPrintBhaskara(2.0, 6.0, 4.0);
-
-	std::cout << "a = 1, b = 2, c = 1\n";
-	calcAndPrintBhaskara(1.0, 2.0, 1.0);
-
-	std::cout << "a = 2, b = 3, c = 4\n";
-	calcAndPrintBhaskara(2.0, 3.0, 4.0);
-
 	double a{ getUserInput('a') };
-	std::cout << "a = " << a << '\n';
-	std::cout << "a/3 = " << a/3 << '\n';
+	std::cout << a << '\n';
+//	double b{ getUserInput('b') };
+//	double c{ getUserInput('c') };
 
-	double b{ getUserInput('b') };
-	std::cout << "b = " << b << '\n';
-	std::cout << "b/3 = " << b/3 << '\n';
+//	calcAndPrintBhaskara(a, b, c);
 
 	return 0;
 }
