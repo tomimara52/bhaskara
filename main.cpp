@@ -12,9 +12,10 @@ double getUserInput(char coefficient)
 			break;
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
-		std::cout << "Invalid input, try again....\n";
+		std::cout << "Invalid input, try again....\n\n";
 	}
 
+	std::cout << '\n';
 	return userInput;
 }
 
