@@ -62,11 +62,10 @@ void calcAndPrintBhaskara(double a, double b, double c)
 int main()
 {
 	double a{ getUserInput('a') };
-	std::cout << a << '\n';
-//	double b{ getUserInput('b') };
-//	double c{ getUserInput('c') };
+	double b{ getUserInput('b') };
+	double c{ getUserInput('c') };
 
-//	calcAndPrintBhaskara(a, b, c);
+	calcAndPrintBhaskara(a, b, c);
 
 	return 0;
 }
