@@ -1,6 +1,22 @@
 #include <iostream>
 #include <cmath>
 
+double getUserInput(char coefficient)
+{
+	double userInput;
+	while (true)
+	{
+		std::cout << "Enter the '" << coefficient << "' coefficient: ";
+		std::cin >> userInput;
+		std::cin.clear();
+		std::cin.ignore(1000, '\n');
+		if (!std::cin.fail())
+			break;
+		std::cout << "Invalid input, try again....\n";
+	}
+
+	return userInput;
+}
 
 double getDiscriminant(double a, double b, double c)
 {
@@ -53,6 +69,14 @@ int main()
 
 	std::cout << "a = 2, b = 3, c = 4\n";
 	calcAndPrintBhaskara(2.0, 3.0, 4.0);
+
+	double a{ getUserInput('a') };
+	std::cout << "a = " << a << '\n';
+	std::cout << "a/3 = " << a/3 << '\n';
+
+	double b{ getUserInput('b') };
+	std::cout << "b = " << b << '\n';
+	std::cout << "b/3 = " << b/3 << '\n';
 
 	return 0;
 }
