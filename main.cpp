@@ -1,27 +1,31 @@
 #include <iostream>
 #include <cmath>
 
-double ignoreLine()
+void ignoreLine()
 {
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 double getUserInput(char coefficient)
 {
-	double userInput{};
 	while (true)
 	{
 		std::cout << "Enter the '" << coefficient << "' coefficient: ";
+		double userInput{};
 		std::cin >> userInput;
-		if (!std::cin.fail())
-			break;
-		std::cin.clear();
-		ignoreLine();
-		std::cout << "Invalid input, try again....\n\n";
-	}
 
-	std::cout << '\n';
-	return userInput;
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			ignoreLine();
+			std::cout << "Invalid input, try again....\n\n";
+		}
+		else
+		{
+			ignoreLine();
+			return userInput;
+		}
+	}
 }
 
 double getDiscriminant(double a, double b, double c)
