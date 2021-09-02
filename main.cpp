@@ -1,6 +1,11 @@
 #include <iostream>
 #include <cmath>
 
+double ignoreLine()
+{
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
 double getUserInput(char coefficient)
 {
 	double userInput{};
@@ -11,7 +16,7 @@ double getUserInput(char coefficient)
 		if (!std::cin.fail())
 			break;
 		std::cin.clear();
-		std::cin.ignore(1000, '\n');
+		ignoreLine();
 		std::cout << "Invalid input, try again....\n\n";
 	}
 
